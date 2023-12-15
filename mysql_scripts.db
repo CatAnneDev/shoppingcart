@@ -49,10 +49,10 @@ CREATE TABLE IF NOT EXISTS `products` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 INSERT INTO `products` (`id`, `name`, `desc`, `price`, `rrp`, `quantity`, `img`, `date_added`) VALUES
-(1, 'Cat Scarf', '<p>Keep your cta warm</p>', '29.99', '0.00', 10, 'cat-scarf.jpg', '2019-03-13 17:55:22'),
-(2, 'Cat Passport', '', '14.99', '19.99', 34, 'cat-passport.jpg', '2019-03-13 18:52:49'),
-(3, 'Cat Yoda Hat', '', '199.99', '0.00', 23, 'cat-yoda-hat.jpg', '2019-03-13 18:47:56'),
-(4, 'Cat Ramen Box', '', '79.99', '0.00', 7, 'cat-ramen-box.jpg', '2019-03-13 17:42:04'),
-(5, 'Cat House', '', '499.99', '0.00', 3, 'cat-house.jpg', '2019-03-13 16:42:04'),
-(6, 'Cat Bed', '', '99.99', '0.00', 11, 'cat-bed.jpg', '2019-03-13 15:42:04'),
-(7, 'Cat Mouse', '', '42.99', '0.00', 19, 'cat-mouse.jpg', '2019-03-13 14:42:04');
+(1, 'Cat Scarf', '<p>Keep your cat warm.</p>', '29.99', '0.00', 10, 'cat-scarf.jpg', '2019-03-13 17:55:22'),
+(2, 'Cat Passport', '<p>Travel with your cat.</p>', '14.99', '19.99', 34, 'cat-passport.jpg', '2019-03-13 18:52:49'),
+(3, 'Cat Yoda Hat', '<p>Cats like Star Wars too.</p>', '199.99', '0.00', 23, 'cat-yoda-hat.jpg', '2019-03-13 18:47:56'),
+(4, 'Cat Ramen Box', '<p>Nine out of ten cats would reccomend.</p>', '79.99', '0.00', 7, 'cat-ramen-box.jpg', '2019-03-13 17:42:04'),
+(5, 'Cat House', '<p>Decorated just in time for the holidays.</p>', '499.99', '0.00', 3, 'cat-house.jpg', '2019-03-13 16:42:04'),
+(6, 'Cat Bed', '<p>Comfy.</p>', '99.99', '0.00', 11, 'cat-bed.jpg', '2019-03-13 15:42:04'),
+(7, 'Cat Mouse', '<p>Buy your cat the equipment they need to succeed in their Computer Science degree.</p>', '42.99', '0.00', 19, 'cat-mouse.jpg', '2019-03-13 14:42:04');

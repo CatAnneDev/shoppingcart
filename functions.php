@@ -8,7 +8,8 @@ function unregistered_header($title)
         <head>
             <meta charset="utf-8">
             <title>$title</title>
-            <link href="style.css" rel="stylesheet" type="text/css">
+            <link rel="stylesheet" href="style.css" type="text/css" media="screen and (max-width:500px)">
+            <link rel="stylesheet" href="style_mobile.css" type="text/css" media="screen and (min-width:501px)" />
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
         </head>
         <body>

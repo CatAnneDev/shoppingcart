@@ -9,6 +9,7 @@
 	<body>
 		<div class="login">
 			<h1>Login</h1>
+			<p class="form-redirect">  Not registered? <a href="index.php?page=register">Register here</a></p>
 			<form action="index.php?page=authenticate" method="post">
 				<label for="username">
 					<i class="fas fa-user"></i>

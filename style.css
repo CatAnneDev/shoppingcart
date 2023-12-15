@@ -6,7 +6,7 @@
 	--text-color: #ffffff;
 	--dull-text-color: #aaaaaa;
 	--paypal-color: #f7be3a;
-	--dull-paypal-color: #c49425;
+	--dull-paypal-color: #b9730a;
 }
 * {
 	box-sizing: border-box;
@@ -38,6 +38,34 @@ img
 {
 	padding: 2px;
 }
+img:hover {
+	animation: image_wiggle 3s linear infinite;
+	filter: saturate(1.5);
+}
+@keyframes image_wiggle {
+	0%, 7% {
+	  transform: rotateZ(0);
+	}
+	15% {
+	  transform: rotateZ(-10deg);
+	}
+	20% {
+	  transform: rotateZ(5deg);
+	}
+	25% {
+	  transform: rotateZ(-5deg);
+	}
+	30% {
+	  transform: rotateZ(3deg);
+	}
+	35% {
+	  transform: rotateZ(-2deg);
+	}
+	40%, 100% {
+	  transform: rotateZ(0);
+	}
+}
+
 header {
 	background-color: var(--background-color2);
 	border-bottom: 1px solid var(--primary-color1);
@@ -115,6 +143,7 @@ main .products .products-wrapper .product {
 	overflow: hidden;
 	text-decoration: none;
 	width: 25%;
+	margin: 2px;
 	padding-bottom: 60px;
 }
 main .products .products-wrapper .product .name {
@@ -184,7 +213,7 @@ main > .products h1 {
 	display: block;
 	font-weight: normal;
 	margin: 0;
-	padding: 40px 0;
+	padding: 30px 0 5px;
 	font-size: 24px;
 	text-align: center;
 	width: 100%;
@@ -211,7 +240,7 @@ main .cart h1 {
 	display: block;
 	font-weight: normal;
 	margin: 0;
-	padding: 40px 0;
+	padding: 30px 0 5px;
 	font-size: 24px;
 	text-align: center;
 	width: 100%;
@@ -249,16 +278,13 @@ main .cart table input[type="number"] {
 	border-radius: 5px;
 }
 main .cart .subtotal {
-	padding: 40px 0;
-}
-main .cart .subtotal .text {
-	padding-right: 40px;
+	padding: 20px 0;
 }
 main .cart .subtotal .price {
 	color: var(--dull-text-color);
 }
 main .cart .buttons {
-	padding-bottom: 40px;
+	padding-bottom: 30px;
 }
 main .cart .buttons input[type="submit"] {
 	margin-left: 5px;
@@ -277,7 +303,7 @@ main .placeorder h1 {
 	display: block;
 	font-weight: normal;
 	margin: 0;
-	padding: 40px 0;
+	padding: 30px 0 5px;
 	font-size: 24px;
 	text-align: center;
 	width: 100%;
@@ -307,12 +333,23 @@ footer {
 	border: none;
 	cursor: pointer;
 	width: 215px;
+	transition-property: background-color;
+  	transition-duration: 2s;
 }
 .paypal button:hover {
 	background-color: var(--dull-paypal-color);
 }
 
-
+.form-redirect {
+	text-align: center;
+	color: var(--dull-text-color);
+}
+.register a, .login a {
+	color: var(--primary-color1);
+}
+.register a:hover, .login a:hover {
+	color: var(--dull-primary-color);
+}
 .register {
 	width: 400px;
 	background-color: var(--background-color2);

@@ -70,6 +70,8 @@ if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION[
 $products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 $products = array();
 $subtotal = 0.00;
+$taxes = 0.4225;
+
 // If there are products in cart
 if ($products_in_cart) {
     // There are products in the cart so we need to select those products from the database
@@ -84,6 +86,8 @@ if ($products_in_cart) {
     foreach ($products as $product) {
         $subtotal += (float)$product['price'] * (int)$products_in_cart[$product['id']];
     }
+    $subtotal_with_taxes = $subtotal + ($subtotal * $taxes);
+    $subtotal_with_taxes = number_format($subtotal_with_taxes, 2);
 }
 
 // For testing purposes set this to true, if set to true it will use paypal sandbox
@@ -192,7 +196,7 @@ if (isset($_POST['paypal']) && $products_in_cart && !empty($products_in_cart)) {
 <?=shop_header('Cart')?>
 
 <div class="cart content-wrapper">
-    <h1>Shopping Cart</h1>
+    <h1>PLACE ORDER</h1>
     <form action="index.php?page=cart" method="post">
         <table>
             <thead>
@@ -206,7 +210,7 @@ if (isset($_POST['paypal']) && $products_in_cart && !empty($products_in_cart)) {
             <tbody>
                 <?php if (empty($products)): ?>
                 <tr>
-                    <td colspan="5" style="text-align:center;">You have no products added in your Shopping Cart</td>
+                    <td colspan="5" style="text-align:center;"> </td>
                 </tr>
                 <?php else: ?>
                 <?php foreach ($products as $product): ?>
@@ -227,6 +231,10 @@ if (isset($_POST['paypal']) && $products_in_cart && !empty($products_in_cart)) {
         <div class="subtotal">
             <span class="text">Subtotal</span>
             <span class="price">&dollar;<?=$subtotal?></span>
+        </div>
+        <div class="subtotal">
+            <span class="text">Total with Taxes</span>
+            <span class="price">&dollar;<?=$subtotal_with_taxes?></span>
         </div>
         <div class="buttons">
             <input type="submit" value="Update" name="update">

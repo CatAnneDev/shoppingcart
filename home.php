@@ -8,7 +8,7 @@ if ($_SESSION["loggedin"] != true)
 <?=shop_header("Home")?>
 
 <div class="recentlyadded content-wrapper">
-    <h2>About Shopping 4 Pets</h2>
+    <h1>About Shopping 4 Pets</h2>
     <div class="products">
         <h3>Project: Final Submission</h3>
         <p><b>Purpose:</b> Phase I assignment is to study, understand, and use css,
@@ -26,7 +26,7 @@ if ($_SESSION["loggedin"] != true)
                     etc will rearrange to a different layout (by using different css files) based on the screen
                     size</li>
                 </ul>
-            <li>4. Create a MySQL table to demonstrate login feature</li>
+            <li>Create a MySQL table to demonstrate login feature</li>
                 <ul>
                     <li>use php script + mysql + session data.</li>
                     <li>allow new user creation</li>
