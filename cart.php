@@ -1,4 +1,9 @@
 <?php
+if ($_SESSION['loggedin'] != true)
+{
+    header('Location: index.php');
+}
+
 // If the user clicked the add to cart button on the product page we can check for the form data
 if (isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['product_id']) && is_numeric($_POST['quantity'])) {
     // Set the post variables so we easily identify them, also make sure they are integer
@@ -192,7 +197,7 @@ if (isset($_POST['paypal']) && $products_in_cart && !empty($products_in_cart)) {
         <table>
             <thead>
                 <tr>
-                    <td colspan="2">Product</td>
+                    <td>Product</td>
                     <td>Price</td>
                     <td>Quantity</td>
                     <td>Total</td>
@@ -206,20 +211,13 @@ if (isset($_POST['paypal']) && $products_in_cart && !empty($products_in_cart)) {
                 <?php else: ?>
                 <?php foreach ($products as $product): ?>
                 <tr>
-                    <td class="img">
-                        <a href="index.php?page=product&id=<?=$product['id']?>">
-                            <img src="imgs/<?=$product['img']?>" width="50" height="50" alt="<?=$product['name']?>">
-                        </a>
-                    </td>
                     <td>
                         <a href="index.php?page=product&id=<?=$product['id']?>"><?=$product['name']?></a>
                         <br>
                         <a href="index.php?page=cart&remove=<?=$product['id']?>" class="remove">Remove</a>
                     </td>
                     <td class="price">&dollar;<?=$product['price']?></td>
-                    <td class="quantity">
-                        <input type="number" name="quantity-<?=$product['id']?>" value="<?=$products_in_cart[$product['id']]?>" min="1" max="<?=$product['quantity']?>" placeholder="Quantity" required>
-                    </td>
+                    <td class="quantity"><?=$products_in_cart[$product['id']]?></td>
                     <td class="price">&dollar;<?=$product['price'] * $products_in_cart[$product['id']]?></td>
                 </tr>
                 <?php endforeach; ?>

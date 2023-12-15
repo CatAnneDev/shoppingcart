@@ -1,6 +1,16 @@
+:root{
+	--background-color1: #282b30;
+	--background-color2: #1e2124;
+	--primary-color1:  	#7289da;
+	--dull-primary-color: #4f62a5;
+	--text-color: #ffffff;
+	--dull-text-color: #aaaaaa;
+	--paypal-color: #f7be3a;
+	--dull-paypal-color: #c49425;
+}
 * {
 	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
 	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -11,20 +21,26 @@ html {
 body {
 	position: relative;
 	min-height: 100%;
-	color: #ffffff;
-	background-color: #1e2124; ;
+	color: var(--text-color);
+	background-color: var(--background-color1);
 	margin: 0;
 	padding-bottom: 100px; /* Same height as footer */
 }
 h1, h2, h3, h4, h5 {
-	color: #394352;
+	color: var(--dull-text-color);
 }
 .content-wrapper {
-	width: 1050px;
+	max-width: 80%;
+	min-width: 50%;
 	margin: 0 auto;
 }
+img
+{
+	padding: 2px;
+}
 header {
-	border-bottom: 1px solid #EEEEEE;
+	background-color: var(--background-color2);
+	border-bottom: 1px solid var(--primary-color1);
 }
 header .content-wrapper {
 	display: flex;
@@ -46,12 +62,12 @@ header nav {
 }
 header nav a {
 	text-decoration: none;
-	color: #555555;
+	color: var(--dull-text-color);
 	padding: 10px 10px;
 	margin: 0 10px;
 }
 header nav a:hover {
-	border-bottom: 1px solid #aaa;
+	border-bottom: 1px solid var(--primary-color1);
 }
 header .link-icons {
 	display: flex;
@@ -63,11 +79,11 @@ header .link-icons {
 }
 header .link-icons a {
 	text-decoration: none;
-	color: #394352;
+	color: var(--text-color);
 	padding: 0 10px;
 }
 header .link-icons a:hover {
-	color: #4e5c70;
+	color: var(--dull-text-color);
 }
 header .link-icons a i {
 	font-size: 18px;
@@ -75,9 +91,9 @@ header .link-icons a i {
 header .link-icons a span {
 	display: inline-block;
 	text-align: center;
-	background-color: #63748e;
+	background-color: var(--background-color1);
 	border-radius: 50%;
-	color: #FFFFFF;
+	color: var(--text-color);
 	font-size: 12px;
 	line-height: 16px;
 	width: 16px;
@@ -87,90 +103,47 @@ header .link-icons a span {
 	top: 22px;
 	right: 0;
 }
-main .featured {
-	display: flex;
-	flex-direction: column;
-	background-image: url(imgs/featured-image.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 500px;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-}
-main .featured h2 {
-	display: inline-block;
-	margin: 0;
-	width: 1050px;
-	font-family: Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif;
-	font-size: 68px;
-	color: #FFFFFF;
-	padding-bottom: 10px;
-}
-main .featured p {
-	display: inline-block;
-	margin: 0;
-	width: 1050px;
-	font-size: 24px;
-	color: #FFFFFF;
-}
-main .recentlyadded h2 {
-	display: block;
-	font-weight: normal;
-	margin: 0;
-	padding: 40px 0;
-	font-size: 24px;
-	text-align: center;
-	width: 100%;
-	border-bottom: 1px solid #EEEEEE;
-}
-main .recentlyadded .products, main .products .products-wrapper {
+main .products .products-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
 	padding: 40px 0 0 0;
 }
-main .recentlyadded .products .product, main .products .products-wrapper .product {
+main .products .products-wrapper .product {
 	display: block;
 	overflow: hidden;
 	text-decoration: none;
 	width: 25%;
 	padding-bottom: 60px;
 }
-main .recentlyadded .products .product img, main .products .products-wrapper .product img {
-	transform: scale(1);
-	transition: transform 1s;
-}
-main .recentlyadded .products .product .name, main .products .products-wrapper .product .name {
+main .products .products-wrapper .product .name {
 	display: block;
-	color: #555555;
+	color: var(--text-color);
 	padding: 20px 0 2px 0;
 }
-main .recentlyadded .products .product .price, main .products .products-wrapper .product .price {
+main .products .products-wrapper .product .price {
 	display: block;
-	color: #999999;
+	color: var(--dull-text-color);
 }
-main .recentlyadded .products .product .rrp, main .products .products-wrapper .product .rrp {
-	color: #BBBBBB;
+main .products .products-wrapper .product .rrp {
+	color: var(--dull-text-color);
 	text-decoration: line-through;
 }
-main .recentlyadded .products .product:hover img, main .products .products-wrapper .product:hover img {
-	transform: scale(1.05);
-	transition: transform 1s;
-}
-main .recentlyadded .products .product:hover .name, main .products .products-wrapper .product:hover .name {
+main .products .products-wrapper .product:hover .name {
 	text-decoration: underline;
 }
 main > .product {
+	max-width: 40%;
 	display: flex;
+	justify-content: space-around;
 	padding: 40px 0;
 }
 main > .product > div {
 	padding-left: 15px;
 }
 main > .product h1 {
-	font-size: 34px;
+	font-size: 30px;
 	font-weight: normal;
 	margin: 0;
 	padding: 20px 0 10px 0;
@@ -178,13 +151,7 @@ main > .product h1 {
 main > .product .price {
 	display: block;
 	font-size: 22px;
-	color: #999999;
-}
-main > .product .rrp {
-	color: #BBBBBB;
-	text-decoration: line-through;
-	font-size: 22px;
-	padding-left: 5px;
+	color: var(--dull-text-color);
 }
 main > .product form {
 	display: flex;
@@ -192,27 +159,26 @@ main > .product form {
 	margin: 40px 0;
 }
 main > .product form input[type="number"] {
-	width: 400px;
+	width: 200px;
 	padding: 10px;
 	margin-bottom: 15px;
-	border: 1px solid #ccc;
-	color: #555555;
+	border: 1px solid var(--primary-color1);
+	color: var(--background-color1);
 	border-radius: 5px;
 }
 main > .product form input[type="submit"] {
-	background: #4e5c70;
+	background: var(--primary-color1);
 	border: 0;
-	color: #FFFFFF;
-	width: 400px;
+	color: var(--text-color);
+	width: 200px;
 	padding: 12px 0;
 	text-transform: uppercase;
-	font-size: 14px;
 	font-weight: bold;
 	border-radius: 5px;
 	cursor: pointer;
 }
 main > .product form input[type="submit"]:hover {
-	background: #434f61;
+	background: var(--dull-primary-color);
 }
 main > .products h1 {
 	display: block;
@@ -233,14 +199,13 @@ main > .products .buttons a {
 	margin-left: 5px;
 	padding: 12px 20px;
 	border: 0;
-	background: #4e5c70;
-	color: #FFFFFF;
-	font-size: 14px;
+	background: var(--primary-color1);
+	color: var(--text-color);
 	font-weight: bold;
 	border-radius: 5px;
 }
 main > .products .buttons a:hover {
-	background: #434f61;
+	background: var(--dull-primary-color);
 }
 main .cart h1 {
 	display: block;
@@ -256,72 +221,57 @@ main .cart table {
 }
 main .cart table thead td {
 	padding: 30px 0;
-	border-bottom: 1px solid #EEEEEE;
-}
-main .cart table thead td:last-child {
-	text-align: right;
+	border-bottom: 1px solid var(--primary-color1);
 }
 main .cart table tbody td {
 	padding: 20px 0;
-	border-bottom: 1px solid #EEEEEE;
-}
-main .cart table tbody td:last-child {
-	text-align: right;
-}
-main .cart table .img {
-	width: 80px;
+	border-bottom: 1px solid var(--primary-color1);
 }
 main .cart table .remove {
-	color: #777777;
-	font-size: 12px;
+	color: var(--dull-text-color);
 	padding-top: 3px;
 }
 main .cart table .remove:hover {
 	text-decoration: underline;
 }
 main .cart table .price {
-	color: #999999;
+	color: var(--dull-text-color);
 }
 main .cart table a {
 	text-decoration: none;
-	color: #555555;
+	color: var(--text-color);
 }
 main .cart table input[type="number"] {
 	width: 68px;
 	padding: 10px;
-	border: 1px solid #ccc;
-	color: #555555;
+	border: 1px solid var(--primary-color1);
+	color: var(--dull-primary-color);
 	border-radius: 5px;
 }
 main .cart .subtotal {
-	text-align: right;
 	padding: 40px 0;
 }
 main .cart .subtotal .text {
 	padding-right: 40px;
-	font-size: 18px;
 }
 main .cart .subtotal .price {
-	font-size: 18px;
-	color: #999999;
+	color: var(--dull-text-color);
 }
 main .cart .buttons {
-	text-align: right;
 	padding-bottom: 40px;
 }
 main .cart .buttons input[type="submit"] {
 	margin-left: 5px;
 	padding: 12px 20px;
 	border: 0;
-	background: #4e5c70;
-	color: #FFFFFF;
-	font-size: 14px;
+	background: var(--primary-color1);
+	color: var(--text-color);
 	font-weight: bold;
 	cursor: pointer;
 	border-radius: 5px;
 }
 main .cart .buttons input[type="submit"]:hover {
-	background: #434f61;
+	background: var(--dull-primary-color);
 }
 main .placeorder h1 {
 	display: block;
@@ -338,7 +288,8 @@ main .placeorder p {
 footer {
 	position: absolute;
 	bottom: 0;
-	border-top: 1px solid #EEEEEE;
+	background-color: var(--background-color2);
+	border-top: 1px solid var(--primary-color1);
 	padding: 20px 0;
 	width: 100%;
 }
@@ -346,35 +297,34 @@ footer {
 
 
 .paypal {
-	text-align: right;
 	padding-bottom: 40px;
 }
 .paypal button {
 	display: inline-block;
 	padding: 10px 20px 7px 20px;
-	background-color: #FFC439;
+	background-color: var(--paypal-color);
 	border-radius: 5px;
 	border: none;
 	cursor: pointer;
 	width: 215px;
 }
 .paypal button:hover {
-	background-color: #f3bb37;
+	background-color: var(--dull-paypal-color);
 }
 
 
 .register {
 	width: 400px;
-	background-color: #ffffff;
+	background-color: var(--background-color2);
 	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
 	margin: 100px auto;
 }
 .register h1 {
 	text-align: center;
-	color: #5b6574;
+	color: var(--text-color);
 	font-size: 24px;
 	padding: 20px 0 20px 0;
-	border-bottom: 1px solid #dee0e4;
+	border-bottom: 1px solid var(--primary-color1);
 }
 .register form {
 	display: flex;
@@ -388,13 +338,13 @@ footer {
 	align-items: center;
 	width: 50px;
    height: 50px;
-	background-color: #3274d6;
-	color: #ffffff;
+	background-color: var(--primary-color1);
+	color: var(--text-color);
 }
 .register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
 	width: 310px;
 	height: 50px;
-	border: 1px solid #dee0e4;
+	border: 1px solid var(--text-color);
 	margin-bottom: 20px;
 	padding: 0 15px;
 }
@@ -402,15 +352,15 @@ footer {
 	width: 100%;
 	padding: 15px;
 	margin-top: 20px;
-	background-color: #3274d6;
+	background-color: var(--primary-color1);
    border: 0;
 	cursor: pointer;
 	font-weight: bold;
-	color: #ffffff;
+	color: var(--text-color);
 	transition: background-color 0.2s;
 }
 .register form input[type="submit"]:hover {
-  background-color: #2868c7;
+  background-color: var(--dull-primary-color);
 	transition: background-color 0.2s;
 }
 
@@ -418,16 +368,16 @@ footer {
 
 .login {
 	width: 400px;
-	background-color: #ffffff;
+	background-color: var(--background-color2);
 	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
 	margin: 100px auto;
 }
 .login h1 {
 	text-align: center;
-	color: #5b6574;
+	color: var(--text-color);
 	font-size: 24px;
 	padding: 20px 0 20px 0;
-	border-bottom: 1px solid #dee0e4;
+	border-bottom: 1px solid var(--primary-color1);
 }
 .login form {
 	display: flex;
@@ -441,13 +391,13 @@ footer {
 	align-items: center;
 	width: 50px;
 	height: 50px;
-	background-color: #3274d6;
-	color: #ffffff;
+	background-color: var(--primary-color1);
+	color: var(--text-color);
 }
 .login form input[type="password"], .login form input[type="text"] {
 	width: 310px;
 	height: 50px;
-	border: 1px solid #dee0e4;
+	border: 1px solid var(--text-color);
 	margin-bottom: 20px;
 	padding: 0 15px;
 }
@@ -455,7 +405,7 @@ footer {
 	width: 100%;
 	padding: 15px;
    margin-top: 20px;
-	background-color: #3274d6;
+	background-color: var(--primary-color1);
 	border: 0;
 	cursor: pointer;
 	font-weight: bold;
@@ -463,6 +413,6 @@ footer {
 	transition: background-color 0.2s;
 }
 .login form input[type="submit"]:hover {
-  background-color: #2868c7;
+  background-color: var(--dull-primary-color);
 	transition: background-color 0.2s;
 }

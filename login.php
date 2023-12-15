@@ -1,4 +1,4 @@
-<?=unregistered_header('Register')?>
+<?=unregistered_header("Register")?>
 
 <html>
 	<head>

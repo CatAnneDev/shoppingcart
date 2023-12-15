@@ -1,4 +1,12 @@
-<?=shop_header('Place Order')?>
+<?php
+if ($_SESSION["loggedin"] != true)
+{
+    header("Location: index.php");
+}
+
+?>
+
+<?=shop_header("Place Order")?>
 
 <div class="placeorder content-wrapper">
     <h1>Your Order Has Been Placed</h1>

@@ -1,6 +1,7 @@
 <?php
 // Visitor header, if user is not logged in
-function unregistered_header($title) {
+function unregistered_header($title) 
+{
     echo <<<EOT
     <!DOCTYPE html>
     <html>
@@ -63,7 +64,8 @@ EOT;
 }
 
 // Shop footer
-function shop_footer() {
+function shop_footer()
+{
 echo <<<EOT
         </main>
         <footer>
@@ -97,7 +99,7 @@ function pdo_connect_mysql()
 }
 
 // redirects logged out users to the login page
-function login_redirect()
+function logged_out_redirect()
 {
     if ($_SESSION['loggedin'] != true)
     {
