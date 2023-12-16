@@ -10,10 +10,8 @@
 }
 * {
 	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+	font-family: roboto, "helvetica neue", Arial, sans-serif;
 	font-size: 16px;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 html {
 	height: 100%;
@@ -36,6 +34,7 @@ h1, h2, h3, h4, h5 {
 }
 img
 {
+	border: 2px solid var(--primary-color1);
 	padding: 2px;
 }
 img:hover {
@@ -68,7 +67,6 @@ img:hover {
 
 header {
 	background-color: var(--background-color2);
-	border-bottom: 1px solid var(--primary-color1);
 }
 header .content-wrapper {
 	display: flex;
@@ -90,12 +88,13 @@ header nav {
 }
 header nav a {
 	text-decoration: none;
-	color: var(--dull-text-color);
+	color: var(--text-color);
 	padding: 10px 10px;
 	margin: 0 10px;
 }
 header nav a:hover {
-	border-bottom: 1px solid var(--primary-color1);
+	text-decoration: underline;
+	color: var(--dull-text-color);
 }
 header .link-icons {
 	display: flex;
@@ -155,21 +154,16 @@ main .products .products-wrapper .product .price {
 	display: block;
 	color: var(--dull-text-color);
 }
-main .products .products-wrapper .product .rrp {
-	color: var(--dull-text-color);
-	text-decoration: line-through;
-}
 main .products .products-wrapper .product:hover .name {
 	text-decoration: underline;
 }
 main > .product {
 	max-width: 40%;
-	display: flex;
 	justify-content: space-around;
 	padding: 40px 0;
 }
 main > .product > div {
-	padding-left: 15px;
+	padding-right: 20px;
 }
 main > .product h1 {
 	font-size: 30px;
@@ -222,17 +216,7 @@ main > .products .buttons {
 	text-align: right;
 	padding-bottom: 40px;
 }
-main > .products .buttons a {
-	display: inline-block;
-	text-decoration: none;
-	margin-left: 5px;
-	padding: 12px 20px;
-	border: 0;
-	background: var(--primary-color1);
-	color: var(--text-color);
-	font-weight: bold;
-	border-radius: 5px;
-}
+
 main > .products .buttons a:hover {
 	background: var(--dull-primary-color);
 }
@@ -245,16 +229,22 @@ main .cart h1 {
 	text-align: center;
 	width: 100%;
 }
+main .cart p {
+	text-align: center;
+}
 main .cart table {
+	border-collapse: collapse;
+	border: 1px solid var(--primary-color1);
 	width: 100%;
 }
 main .cart table thead td {
-	padding: 30px 0;
-	border-bottom: 1px solid var(--primary-color1);
+	border: 1px solid var(--primary-color1);
+	padding: 20px;
+	font-weight: bold;
 }
 main .cart table tbody td {
-	padding: 20px 0;
-	border-bottom: 1px solid var(--primary-color1);
+	border: 1px solid var(--primary-color1);
+	padding: 20px;
 }
 main .cart table .remove {
 	color: var(--dull-text-color);
@@ -269,13 +259,6 @@ main .cart table .price {
 main .cart table a {
 	text-decoration: none;
 	color: var(--text-color);
-}
-main .cart table input[type="number"] {
-	width: 68px;
-	padding: 10px;
-	border: 1px solid var(--primary-color1);
-	color: var(--dull-primary-color);
-	border-radius: 5px;
 }
 main .cart .subtotal {
 	padding: 20px 0;
@@ -315,7 +298,6 @@ footer {
 	position: absolute;
 	bottom: 0;
 	background-color: var(--background-color2);
-	border-top: 1px solid var(--primary-color1);
 	padding: 20px 0;
 	width: 100%;
 }
@@ -324,6 +306,9 @@ footer {
 
 .paypal {
 	padding-bottom: 40px;
+}
+.paypal img {
+	border: 0px;
 }
 .paypal button {
 	display: inline-block;
@@ -361,7 +346,6 @@ footer {
 	color: var(--text-color);
 	font-size: 24px;
 	padding: 20px 0 20px 0;
-	border-bottom: 1px solid var(--primary-color1);
 }
 .register form {
 	display: flex;
@@ -414,7 +398,6 @@ footer {
 	color: var(--text-color);
 	font-size: 24px;
 	padding: 20px 0 20px 0;
-	border-bottom: 1px solid var(--primary-color1);
 }
 .login form {
 	display: flex;

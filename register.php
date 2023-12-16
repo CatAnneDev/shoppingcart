@@ -59,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $username = strip_input($_POST["username"]);
     $password = strip_input($_POST["password"]);
+	$email = strip_input($_POST["email"]);
 }
 
 // check if data submitted exists from register form

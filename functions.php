@@ -8,14 +8,16 @@ function unregistered_header($title)
         <head>
             <meta charset="utf-8">
             <title>$title</title>
-            <link rel="stylesheet" href="style.css" type="text/css" media="screen and (max-width:500px)">
-            <link rel="stylesheet" href="style_mobile.css" type="text/css" media="screen and (min-width:501px)" />
+            <link rel="stylesheet" href="style.css" type="text/css" media="screen and (min-width:501px)"/>
+            <link rel="stylesheet" href="style_mobile.css" type="text/css" media="screen and (max-width:500px)"/>
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
         </head>
         <body>
             <header>
                 <div class="content-wrapper">
-                    <h1>Shopping 4 Pets</h1>
+                    <nav>
+                    </nav>
+                    <h1> </h1>
                     <div class="link-icons">
                         <a href="index.php?page=register">
                             <i class="fas fa-user-plus"></i>
@@ -39,21 +41,25 @@ echo <<<EOT
 	<head>
 		<meta charset="utf-8">
 		<title>$title</title>
-		<link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen and (min-width:501px)"/>
+        <link rel="stylesheet" href="style_mobile.css" type="text/css" media="screen and (max-width:500px)"/>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
 	<body>
         <header>
             <div class="content-wrapper">
-                <h1>Shopping 4 Pets</h1>
                 <nav>
                     <a href="index.php?page=home">Home</a>
                     <a href="index.php?page=products">Products</a>
                 </nav>
+                <h1> </h1>
                 <div class="link-icons">
                     <a href="index.php?page=cart">
 						<i class="fas fa-shopping-cart"></i>
 					</a>
+                    <a href="index.php?page=orderhistory">
+                        <i class="fas fa-clipboard"></i>
+                    </a>
                     <a href="index.php?page=logout">
                         <i class="fas fa-sign-out-alt"></i>
                     </a>
@@ -71,7 +77,8 @@ echo <<<EOT
         </main>
         <footer>
             <div class="content-wrapper">
-                <p>&copy; 1999-2077, NotARealCopyright Shopping Cart System</p>
+                <p>Tutorial source:</p>
+                <p>Adams, D. (2019, March 22). Shopping Cart System with PHP and MySQL. CodeShack. https://codeshack.io/shopping-cart-system-php-mysql/</p>
             </div>
         </footer>
     </body>

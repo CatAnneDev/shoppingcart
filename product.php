@@ -25,7 +25,6 @@ if (isset($_GET["id"])) {
 <?=shop_header("Product")?>
 
 <div class="product content-wrapper">
-    <img src="imgs/<?=$product["img"]?>" width="500" height="500" alt="<?=$product["name"]?>">
     <div>
         <h1 class="name"><?=$product["name"]?></h1>
         <span class="price">
@@ -40,6 +39,7 @@ if (isset($_GET["id"])) {
             <?=$product["desc"]?>
         </div>
     </div>
+    <img src="imgs/<?=$product["img"]?>" width="500" height="500" alt="<?=$product["name"]?>">
 </div>
 
 <?=shop_footer()?>

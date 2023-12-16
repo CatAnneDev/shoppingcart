@@ -61,8 +61,8 @@ if (isset($_POST['update']) && isset($_SESSION['cart'])) {
 }
 
 // Send the user to the place order page if they click the Place Order button, also the cart should not be empty
-if (isset($_POST['placeorder']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-    header('Location: index.php?page=placeorder');
+if (isset($_POST['paymentinfo']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+    header('Location: index.php?page=paymentinfo');
     exit;
 }
 
@@ -88,6 +88,7 @@ if ($products_in_cart) {
     }
     $subtotal_with_taxes = $subtotal + ($subtotal * $taxes);
     $subtotal_with_taxes = number_format($subtotal_with_taxes, 2);
+    $_SESSION["subtotal_with_taxes"] = $subtotal_with_taxes;
 }
 
 // For testing purposes set this to true, if set to true it will use paypal sandbox
@@ -238,7 +239,7 @@ if (isset($_POST['paypal']) && $products_in_cart && !empty($products_in_cart)) {
         </div>
         <div class="buttons">
             <input type="submit" value="Update" name="update">
-            <input type="submit" value="Place Order" name="placeorder">
+            <input type="submit" value="Place Order" name="paymentinfo">
         </div>
         <div class="paypal">
             <button type="submit" name="paypal"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" border="0" alt="PayPal Logo"></button>

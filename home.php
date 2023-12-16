@@ -3,6 +3,10 @@ if ($_SESSION["loggedin"] != true)
 {
     header("Location: index.php");
 }
+if(isset($_COOKIE["has_shopped_with_us"]))
+{
+    echo '<script>alert("Welcome back!, shopper")</script>';
+}
 ?>
 
 <?=shop_header("Home")?>
