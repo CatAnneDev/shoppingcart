@@ -1,4 +1,9 @@
 <?php
+if ($_SESSION["loggedin"] != true)
+{
+    header("Location: index.php");
+}
+
 $DATABASE_HOST = "localhost";
 $DATABASE_USERNAME = "root";
 $DATABASE_PASSWORD = "";
@@ -11,10 +16,6 @@ if ( mysqli_connect_errno() )
 	exit("Failed to connect to MySQL: " . mysqli_connect_error());
 }
 
-if ($_SESSION["loggedin"] != true)
-{
-    header("Location: index.php");
-}
 
 $sql_query = "SELECT id, payment_amount, created, payer_email, first_name, last_name, address_street, address_city, address_state, address_zip, address_country FROM transactions";
 $result = $conn->query($sql_query);

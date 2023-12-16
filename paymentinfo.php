@@ -25,8 +25,6 @@ function strip_input($data)
 function only_has_numbers(str) {
 	return(/^\d+$/.test(str));
 }   
-
-
 function validate_form() {
   let first_name = document.forms["payment-info"]["first_name"].value;
   if (first_name == "") {
